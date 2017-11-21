@@ -1,0 +1,6 @@
+framework module Pods_32099 {
+  umbrella header "Pods-32099-umbrella.h"
+
+  export *
+  module * { export * }
+}
