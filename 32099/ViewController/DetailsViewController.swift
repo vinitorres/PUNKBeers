@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DetailsViewController.swift
 //  32099
 //
 //  Created by Vinicius Torres on 11/21/17.
