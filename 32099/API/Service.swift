@@ -27,9 +27,11 @@ class Service {
     
     static let session = URLSession(configuration: configuration)
     
-    static func getBeers(onComplete: @escaping (_ success: [Beer]?)->()) {
+    static func getBeers(page: Int, onComplete: @escaping (_ success: [Beer]?)->()) {
         
-        guard let url = URL(string: BASE_URL + URL_GET_BEERS) else {
+        print("request call")
+        
+        guard let url = URL(string: "\(BASE_URL)\(URL_GET_BEERS)?page=\(page)") else {
             onComplete(nil)
             return
         }

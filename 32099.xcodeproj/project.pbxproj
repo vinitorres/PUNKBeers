@@ -18,7 +18,20 @@
 		24287F321FC48F6900FD4DC5 /* BeerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24287F311FC48F6900FD4DC5 /* BeerTableViewCell.swift */; };
 		24287F351FC4942100FD4DC5 /* BeersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24287F341FC4942100FD4DC5 /* BeersTableViewController.swift */; };
 		24287F381FC49E2400FD4DC5 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24287F371FC49E2400FD4DC5 /* Service.swift */; };
+		24EA983C1FDB584F00CA14F3 /* BeerStructTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA983B1FDB584F00CA14F3 /* BeerStructTests.swift */; };
+		24EA98401FDB5D5700CA14F3 /* BeerManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA983F1FDB5D5700CA14F3 /* BeerManagerTests.swift */; };
+		24EA98421FDB5DDF00CA14F3 /* BeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA98411FDB5DDF00CA14F3 /* BeerManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24EA98361FDB581300CA14F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24287F0A1FC4835400FD4DC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24287F111FC4835500FD4DC5;
+			remoteInfo = 32099;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		24287F121FC4835500FD4DC5 /* 32099.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 32099.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,6 +46,11 @@
 		24287F311FC48F6900FD4DC5 /* BeerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewCell.swift; sourceTree = "<group>"; };
 		24287F341FC4942100FD4DC5 /* BeersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersTableViewController.swift; sourceTree = "<group>"; };
 		24287F371FC49E2400FD4DC5 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		24EA98311FDB581300CA14F3 /* 32099Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 32099Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24EA98351FDB581300CA14F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24EA983B1FDB584F00CA14F3 /* BeerStructTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerStructTests.swift; sourceTree = "<group>"; };
+		24EA983F1FDB5D5700CA14F3 /* BeerManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerManagerTests.swift; sourceTree = "<group>"; };
+		24EA98411FDB5DDF00CA14F3 /* BeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerManager.swift; sourceTree = "<group>"; };
 		9D9EDF2076D8F4857A433138 /* Pods-32099.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-32099.debug.xcconfig"; path = "Pods/Target Support Files/Pods-32099/Pods-32099.debug.xcconfig"; sourceTree = "<group>"; };
 		EBBE090A627BB552E1E2D035 /* Pods_32099.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_32099.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F93568E3D1C7CA99636A0EBE /* Pods-32099.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-32099.release.xcconfig"; path = "Pods/Target Support Files/Pods-32099/Pods-32099.release.xcconfig"; sourceTree = "<group>"; };
@@ -44,6 +62,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EBA6B978B36452343258149 /* Pods_32099.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24EA982E1FDB581300CA14F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				24287F141FC4835500FD4DC5 /* 32099 */,
+				24EA98321FDB581300CA14F3 /* 32099Tests */,
 				24287F131FC4835500FD4DC5 /* Products */,
 				80A59EA977EB32BB7BD1672C /* Pods */,
 				23EDE473354320971014CD8B /* Frameworks */,
@@ -72,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				24287F121FC4835500FD4DC5 /* 32099.app */,
+				24EA98311FDB581300CA14F3 /* 32099Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				24287F361FC4955900FD4DC5 /* API */,
-				24287F2E1FC48F3200FD4DC5 /* ViewController */,
+				24287F2E1FC48F3200FD4DC5 /* Controllers */,
 				24287F2A1FC48EFB00FD4DC5 /* View */,
 				24287F271FC48DE200FD4DC5 /* Model */,
 				24287F151FC4835500FD4DC5 /* AppDelegate.swift */,
@@ -94,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				24287F281FC48DF200FD4DC5 /* Beer.swift */,
+				24EA98411FDB5DDF00CA14F3 /* BeerManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,14 +144,14 @@
 			path = Include;
 			sourceTree = "<group>";
 		};
-		24287F2E1FC48F3200FD4DC5 /* ViewController */ = {
+		24287F2E1FC48F3200FD4DC5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				24287F2F1FC48F4900FD4DC5 /* Include */,
 				24287F341FC4942100FD4DC5 /* BeersTableViewController.swift */,
 				24287F171FC4835500FD4DC5 /* DetailsViewController.swift */,
 			);
-			path = ViewController;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		24287F2F1FC48F4900FD4DC5 /* Include */ = {
@@ -140,6 +168,32 @@
 				24287F371FC49E2400FD4DC5 /* Service.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		24EA98321FDB581300CA14F3 /* 32099Tests */ = {
+			isa = PBXGroup;
+			children = (
+				24EA983E1FDB5AB700CA14F3 /* TestsControllers */,
+				24EA983D1FDB5AAC00CA14F3 /* TestsModel */,
+				24EA98351FDB581300CA14F3 /* Info.plist */,
+			);
+			path = 32099Tests;
+			sourceTree = "<group>";
+		};
+		24EA983D1FDB5AAC00CA14F3 /* TestsModel */ = {
+			isa = PBXGroup;
+			children = (
+				24EA983B1FDB584F00CA14F3 /* BeerStructTests.swift */,
+				24EA983F1FDB5D5700CA14F3 /* BeerManagerTests.swift */,
+			);
+			path = TestsModel;
+			sourceTree = "<group>";
+		};
+		24EA983E1FDB5AB700CA14F3 /* TestsControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TestsControllers;
 			sourceTree = "<group>";
 		};
 		80A59EA977EB32BB7BD1672C /* Pods */ = {
@@ -174,19 +228,42 @@
 			productReference = 24287F121FC4835500FD4DC5 /* 32099.app */;
 			productType = "com.apple.product-type.application";
 		};
+		24EA98301FDB581300CA14F3 /* 32099Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24EA98381FDB581300CA14F3 /* Build configuration list for PBXNativeTarget "32099Tests" */;
+			buildPhases = (
+				24EA982D1FDB581300CA14F3 /* Sources */,
+				24EA982E1FDB581300CA14F3 /* Frameworks */,
+				24EA982F1FDB581300CA14F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24EA98371FDB581300CA14F3 /* PBXTargetDependency */,
+			);
+			name = 32099Tests;
+			productName = 32099Tests;
+			productReference = 24EA98311FDB581300CA14F3 /* 32099Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		24287F0A1FC4835400FD4DC5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Vinicius Torres";
 				TargetAttributes = {
 					24287F111FC4835500FD4DC5 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+					};
+					24EA98301FDB581300CA14F3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 24287F111FC4835500FD4DC5;
 					};
 				};
 			};
@@ -204,6 +281,7 @@
 			projectRoot = "";
 			targets = (
 				24287F111FC4835500FD4DC5 /* 32099 */,
+				24EA98301FDB581300CA14F3 /* 32099Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -217,6 +295,13 @@
 				24287F1D1FC4835500FD4DC5 /* Assets.xcassets in Resources */,
 				24287F1B1FC4835500FD4DC5 /* Main.storyboard in Resources */,
 				24287F2D1FC48F2C00FD4DC5 /* BeerTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24EA982F1FDB581300CA14F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,13 +369,31 @@
 				24287F181FC4835500FD4DC5 /* DetailsViewController.swift in Sources */,
 				24287F291FC48DF200FD4DC5 /* Beer.swift in Sources */,
 				24287F351FC4942100FD4DC5 /* BeersTableViewController.swift in Sources */,
+				24EA98421FDB5DDF00CA14F3 /* BeerManager.swift in Sources */,
 				24287F161FC4835500FD4DC5 /* AppDelegate.swift in Sources */,
 				24287F321FC48F6900FD4DC5 /* BeerTableViewCell.swift in Sources */,
 				24287F381FC49E2400FD4DC5 /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		24EA982D1FDB581300CA14F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24EA983C1FDB584F00CA14F3 /* BeerStructTests.swift in Sources */,
+				24EA98401FDB5D5700CA14F3 /* BeerManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24EA98371FDB581300CA14F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24287F111FC4835500FD4DC5 /* 32099 */;
+			targetProxy = 24EA98361FDB581300CA14F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		24287F191FC4835500FD4DC5 /* Main.storyboard */ = {
@@ -451,6 +554,40 @@
 			};
 			name = Release;
 		};
+		24EA98391FDB581300CA14F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4W4CDBHWB5;
+				INFOPLIST_FILE = 32099Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.vini.torres.-2099Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/32099.app/32099";
+			};
+			name = Debug;
+		};
+		24EA983A1FDB581300CA14F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4W4CDBHWB5;
+				INFOPLIST_FILE = 32099Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.vini.torres.-2099Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/32099.app/32099";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -468,6 +605,15 @@
 			buildConfigurations = (
 				24287F251FC4835500FD4DC5 /* Debug */,
 				24287F261FC4835500FD4DC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24EA98381FDB581300CA14F3 /* Build configuration list for PBXNativeTarget "32099Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24EA98391FDB581300CA14F3 /* Debug */,
+				24EA983A1FDB581300CA14F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

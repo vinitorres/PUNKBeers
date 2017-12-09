@@ -7,17 +7,26 @@
 //
 
 import UIKit
-import Kingfisher
 
 class BeersTableViewController: UITableViewController {
     
-    fileprivate var listBeers = [Beer]()
+    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+    
+    fileprivate var listBeers = BeerManager()
     fileprivate var selectedBeer: Beer?
-
+    fileprivate var currentPage = 1
+    fileprivate var hasNext = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView.register(UINib(nibName: "BeerTableViewCell", bundle: nil), forCellReuseIdentifier: "beerCell")
+        
+        activityIndicator.color = .black
+        activityIndicator.hidesWhenStopped = true
+        
+        self.tableView.backgroundView = activityIndicator;
+        self.tableView.separatorStyle = .none;
 
         loadData()
         
@@ -26,21 +35,20 @@ class BeersTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         self.title = "Lista de Cervejas"
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func loadData() {
         
-        Service.getBeers(onComplete: { resultBeers in
-            
-            if let beers = resultBeers {
+        let currentCount = listBeers.returnBeersCount()
+        
+        activityIndicator.startAnimating()
+        
+        listBeers.downloadBeersList(page: currentPage, onComplete: { (result) in
+            if result {
                 DispatchQueue.main.async {
-                    self.listBeers = beers
-                    
-                    if self.listBeers.count < 1 {
+                    if self.listBeers.returnBeersCount() < 1 {
+                        
+                        self.activityIndicator.removeFromSuperview()
+                        
                         let message = "Nenhuma cerveja encontrada."
                         let messageLabel = UILabel(frame: CGRect(x: 0,y: 0,width: self.view.bounds.size.width, height:  self.view.bounds.size.height))
                         messageLabel.text = message
@@ -52,15 +60,37 @@ class BeersTableViewController: UITableViewController {
                         self.tableView.backgroundView = messageLabel;
                         self.tableView.separatorStyle = .none;
                     } else {
+                        self.activityIndicator.removeFromSuperview()
+                        
                         self.tableView.separatorStyle = .singleLine;
+                        
+                        if currentCount == self.listBeers.returnBeersCount() {
+                            self.hasNext = false
+                        }
+                        
                         self.tableView.reloadData()
-
+                        
                     }
+                }
+            } else {
+                DispatchQueue.main.async {
                     
+                    self.activityIndicator.removeFromSuperview()
+
+                    let message = "Falha ao baixar dados."
+                    let messageLabel = UILabel(frame: CGRect(x: 0,y: 0,width: self.view.bounds.size.width, height:  self.view.bounds.size.height))
+                    messageLabel.text = message
+                    messageLabel.textColor = UIColor.black
+                    messageLabel.numberOfLines = 0;
+                    messageLabel.textAlignment = .center;
+                    messageLabel.sizeToFit()
+                    
+                    self.tableView.backgroundView = messageLabel;
+                    self.tableView.separatorStyle = .none;
                 }
             }
-            
         })
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,19 +109,13 @@ class BeersTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listBeers.count
+        return listBeers.returnBeersCount()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "beerCell", for: indexPath) as! BeerTableViewCell
-        
-        let resource = ImageResource(downloadURL: URL(string: listBeers[indexPath.row].image_url!)!, cacheKey: listBeers[indexPath.row].name)
-        cell.beerImageIV.kf.setImage(with: resource)
-        
-        cell.beerNameLbl.text = listBeers[indexPath.row].name
-        let abv = listBeers[indexPath.row].abv
-        cell.beerABVLbl.text = String(format: "%.1f", abv!)
-        
+        let beer = listBeers.getBeerAtIndex(index: indexPath.row)
+        cell.prepare(beer: beer)
         return cell
     }
     
@@ -101,9 +125,16 @@ class BeersTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        selectedBeer = listBeers[indexPath.row]
+        selectedBeer = listBeers.getBeerAtIndex(index: indexPath.row)
         performSegue(withIdentifier: "detailsSegue", sender: self)
         
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 1 >= listBeers.returnBeersCount() && hasNext{
+            self.currentPage += 1
+            self.loadData()
+        }
     }
 
 }

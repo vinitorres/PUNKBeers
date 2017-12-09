@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hk1-d6-imv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hk1-d6-imv">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -54,7 +54,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpw-rv-kuD">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="463"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="447"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltW-Mn-ly1">
                                                 <rect key="frame" x="20" y="16" width="280" height="23"/>
@@ -102,9 +102,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mwy-5u-lpD">
-                                                <rect key="frame" x="20" y="187" width="280" height="260"/>
+                                                <rect key="frame" x="20" y="191" width="280" height="240"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="260" id="dkc-Xv-xkt"/>
+                                                    <constraint firstAttribute="height" constant="240" id="dkc-Xv-xkt"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -127,7 +127,7 @@
                                             <constraint firstItem="jaT-Bu-KQU" firstAttribute="leading" secondItem="zxA-ew-mj5" secondAttribute="trailing" constant="4" id="b2n-tM-kZd"/>
                                             <constraint firstAttribute="trailing" secondItem="O5g-F6-WB3" secondAttribute="trailing" constant="20" id="fNQ-rb-806"/>
                                             <constraint firstItem="jaT-Bu-KQU" firstAttribute="centerY" secondItem="zxA-ew-mj5" secondAttribute="centerY" id="imC-Yt-si5"/>
-                                            <constraint firstItem="mwy-5u-lpD" firstAttribute="top" secondItem="jaT-Bu-KQU" secondAttribute="bottom" constant="16" id="tvL-pz-e61"/>
+                                            <constraint firstItem="mwy-5u-lpD" firstAttribute="top" secondItem="jaT-Bu-KQU" secondAttribute="bottom" constant="20" id="tvL-pz-e61"/>
                                             <constraint firstAttribute="trailing" secondItem="ltW-Mn-ly1" secondAttribute="trailing" constant="20" id="ul8-5I-cDG"/>
                                             <constraint firstItem="uqu-AW-ZIF" firstAttribute="leading" secondItem="XYR-qK-0JE" secondAttribute="trailing" constant="4" id="v1w-Ht-qTF"/>
                                             <constraint firstAttribute="bottom" secondItem="mwy-5u-lpD" secondAttribute="bottom" constant="16" id="vYF-MW-G8h"/>

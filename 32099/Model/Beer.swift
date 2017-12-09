@@ -8,25 +8,21 @@
 
 import UIKit
 
-class Beer: NSObject {
+struct Beer {
     
-    var image_url: String?
-    var name: String?
-    var tagline: String?
-    var abv: Float?
-    var ibu: Float?
-    var descriptionBeer: String?
+    let image_url: String
+    let name: String
+    let tagline: String
+    let abv: Float
+    let ibu: Float
+    let descriptionBeer: String
     
-    override init() {
-        
-    }
-    
-    init(imageUrl: String, name: String, tagline: String, abv: Float, ibu: Float, descriptionBeer: String ) {
+    init(imageUrl: String, name: String, tagline: String, abv: Float?, ibu: Float?, descriptionBeer: String ) {
         self.image_url = imageUrl
         self.name = name
         self.tagline = tagline
-        self.abv = abv
-        self.ibu = ibu
+        self.abv = abv ?? 0.0
+        self.ibu = ibu ?? 0.0
         self.descriptionBeer = descriptionBeer
     }
 }
